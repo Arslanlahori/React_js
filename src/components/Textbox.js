@@ -12,6 +12,14 @@ export default function Textbox(props) {
         let newtext = text.toLowerCase();
         settext(newtext);
     }
+    const Cleartext = () => {
+        let newtext = "";
+        settext(newtext);
+    }
+    const Repeat = () => {
+        let newtext = text.repeat(3);
+        settext(newtext);
+    }
 
     const handdle = (event) => {
         settext(event.target.value);
@@ -23,10 +31,12 @@ export default function Textbox(props) {
 
                 <div className="mb-3">
                     <label htmlFor="text" className="form-label">{props.heading}</label>
-                    <textarea className="form-control" id="text" value={text} onChange={handdle} rows="8"></textarea>
+                    <textarea className="form-control" id="text" value={text} onChange={handdle} rows="9"></textarea>
                 </div>
-                <button className="btn btn-primary my-3 mx-3" onClick={handupcase}>Upper Case</button>
-                <button className="btn btn-primary my-3 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
+                <button className="btn btn-primary  mx-3" onClick={handupcase}>Upper Case</button>
+                <button className="btn btn-primary  mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
+                <button className="btn btn-primary  mx-3" onClick={Cleartext}>Clear Text</button>
+                <button className="btn btn-primary  mx-3" onClick={Repeat}>Repeat text</button>
 
 
 
