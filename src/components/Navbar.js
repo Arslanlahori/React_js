@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
+    const [count, setcount] = useState(0);
+    const website = () => {
+        setcount(count + 1);
+        console.log(setcount);
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">{props.tittle}</a>
+                <a className="navbar-brand" href="/" onClick={website}>{props.tittle}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -31,4 +36,9 @@ export default function Navbar(props) {
 Navbar.propTypes = {
     tittle: PropTypes.string,
     about: PropTypes.string
+}
+Navbar.defaultProps =
+{
+    tittle: 'Set tittle here',
+    about: 'Set about us here'
 };
