@@ -5,25 +5,47 @@ export default function Textbox(props) {
 
     const [text, settext] = useState("");
     const handupcase = () => {
-        console.log("" + text);
         let newtext = text.toUpperCase();
         settext(newtext);
     }
+    const ConvertintoLowerCase = () => {
+        let newtext = text.toLowerCase();
+        settext(newtext);
+    }
+
     const handdle = (event) => {
-        console.log("Onchanged");
         settext(event.target.value);
 
     }
     return (
-        <div>
+        <>
+            <div>
 
-            <div className="mb-3">
-                <label htmlFor="text" className="form-label">{props.heading}</label>
-                <textarea className="form-control" id="text" value={text} onChange={handdle} rows="8"></textarea>
+                <div className="mb-3">
+                    <label htmlFor="text" className="form-label">{props.heading}</label>
+                    <textarea className="form-control" id="text" value={text} onChange={handdle} rows="8"></textarea>
+                </div>
+                <button className="btn btn-primary my-3 mx-3" onClick={handupcase}>Upper Case</button>
+                <button className="btn btn-primary my-3 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
+
+
+
             </div>
-            <button className="btn btn-primary" onClick={handupcase}>ConverttoUpperCase</button>
+            <div className="container my-3">
+                <h1>Text Summary</h1>
+                <p>
+                    Your character count is : {text.length}
+                    <br />
+                    Your word count is :{text.split(" ").length}
+                    <br />
+                    How much time you take to read this: {0.008 * text.split(" ").length} Minuts
+                </p>
 
+            </div>
+        </>
 
-        </div>
     )
+
 }
+
+
