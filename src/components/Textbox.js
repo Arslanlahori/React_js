@@ -31,12 +31,15 @@ export default function Textbox(props) {
 
                 <div className="mb-3">
                     <label htmlFor="text" className="form-label">{props.heading}</label>
-                    <textarea className="form-control" id="text" value={text} onChange={handdle} rows="9"></textarea>
+                    <textarea className="form-control my-4" id="text" value={text} onChange={handdle} rows="9"></textarea>
+
+
+                    <button className="btn btn-primary  my-4 mx-3" onClick={handupcase}>Upper Case</button>
+                    <button className="btn btn-primary  my-4 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
+                    <button className="btn btn-primary  my-4 mx-3" onClick={Cleartext}>Clear Text</button>
+                    <button className="btn btn-primary  my-4 mx-3" onClick={Repeat}>Repeat text</button>
+
                 </div>
-                <button className="btn btn-primary  mx-3" onClick={handupcase}>Upper Case</button>
-                <button className="btn btn-primary  mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
-                <button className="btn btn-primary  mx-3" onClick={Cleartext}>Clear Text</button>
-                <button className="btn btn-primary  mx-3" onClick={Repeat}>Repeat text</button>
 
 
 
