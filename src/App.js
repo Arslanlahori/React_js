@@ -1,31 +1,24 @@
 import './App.css';
 import AboutUS from './components/AboutUS';
 import Navbar from './components/Navbar';
-// import Textbox from './components/Textbox';
-// import Footer from './components/Footer';
+import Textbox from './components/Textbox';
+import Footer from './components/Footer';
+import {
+  Route, Routes
+} from "react-router-dom";
 
 
 function App() {
+
   return (
     <>
-      <Navbar tittle="TextConverter" about="About us" />
+      <Navbar tittle="TextAnalyzer" about="About" />
+      <Routes>
+        <Route path='/' element={<div className="container"><Textbox heading="Here you can write" /></div>} />
+        <Route path='/About' element={<div className="container"><AboutUS /></div>} />
 
-      {/* <div className="container my-4">
-        <Textbox heading="Enter the text below " />
-        <br /><br /><br />
-      </div> */}
-      <div className="container my-4">
-
-        <AboutUS />
-      </div>
-
-
-      {/* <div className="footer my-8">
-
-        <Footer />
-      </div> */}
-
-
+      </Routes>
+      <Footer />
     </>
   );
 }
