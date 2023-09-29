@@ -63,7 +63,7 @@ export default function Textbox(props) {
                 <p>
                     Your character count is : {text.length}
                     <br />
-                    Your word count is :{text.split(" ").length}
+                    Your word count is :{text.split(" ").filter((Element) => { return Element.length !== 0 }).length}
                     <br />
                     How much time you take to read this: {0.008 * text.split(" ").length} Minuts
                 </p>
