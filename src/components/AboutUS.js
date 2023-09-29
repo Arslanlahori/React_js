@@ -1,5 +1,5 @@
 import React from 'react'
-
+import arslanImage from './arslanpic.jpg';
 export default function AboutUS() {
 
     return (
@@ -7,30 +7,20 @@ export default function AboutUS() {
             <body>
                 <main>
                     <section className="hero">
-                        <h1>About Me</h1>
+                        <h1>About Developer</h1>
                     </section>
 
                     <section className="set">
-                        <h1 id="H"> I am Computer Science Students at Uet Lahore New Campus. I developed this system for Content Writer</h1>
+                        <h2> As a Computer Science student at UET Lahore New Campus, I understand the challenges that content writers face daily. Juggling deadlines, ensuring impeccable grammar, and delivering engaging content can be a daunting task. That's why I developed "TextAnalyzer"</h2>
                         <br />
-
-
-                        <h2 id="H">Muhammad Arslan</h2>
 
                         <div className="gallery-image">
                             <div className="Icon">
                                 <br />
                                 <br />
-                                <img src="/images/arslanpic.JPG" id="zoom-image" alt="Muhammad Arslan Arshad" />
 
-                                <div className="transparent-box">
-                                    <div className="caption">
-                                        <p>
-                                            <b>Muhammad Arslan Arshad</b>
-                                        </p>
-                                        <p className="opacity-low">Computer Scientist</p>
-                                    </div>
-                                </div>
+                                <img src={arslanImage} id="zoom-image" alt="Muhammad Arslan Arshad" />
+
                             </div>
                         </div>
                     </section>

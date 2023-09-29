@@ -4,6 +4,21 @@ import React, { useState } from 'react';
 export default function Textbox(props) {
 
     const [text, settext] = useState("");
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        settext(newText.join(" "))
+    }
+    const handleEmailExtractClick = () => {
+        // Regular expression to match email addresses
+        const emailRegex = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/g;
+        const extractedEmails = text.match(emailRegex);
+
+        if (extractedEmails) {
+            alert(`Extracted Email Addresses:\n${extractedEmails.join('\n')}`);
+        } else {
+            alert('No email addresses found in the text.');
+        }
+    }
     const handupcase = () => {
         let newtext = text.toUpperCase();
         settext(newtext);
@@ -38,6 +53,8 @@ export default function Textbox(props) {
                     <button className="btn btn-primary  my-4 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
                     <button className="btn btn-primary  my-4 mx-3" onClick={Cleartext}>Clear Text</button>
                     <button className="btn btn-primary  my-4 mx-3" onClick={Repeat}>Repeat text</button>
+                    <button className="btn btn-primary my-4 mx-3" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                    <button className="btn btn-primary my-4 mx-3" onClick={handleEmailExtractClick} > Extract Emails</button>
 
                 </div>
 
@@ -49,7 +66,7 @@ export default function Textbox(props) {
                 <p>
                     Your character count is : {text.length}
                     <br />
-                    Your word count is :{text.split(" ").filter((Element) => { return Element.length !== 0 }).length}
+                    Your word count is :{text.split(" ").length}
                     <br />
                     How much time you take to read this: {0.008 * text.split(" ").length} Minuts
                 </p>
