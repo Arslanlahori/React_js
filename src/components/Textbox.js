@@ -4,6 +4,10 @@ import React, { useState } from 'react';
 export default function Textbox(props) {
 
     const [text, settext] = useState("");
+    const Cleartext = () => {
+        let newtext = "";
+        settext(newtext);
+    }
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         settext(newText.join(" "))
@@ -28,10 +32,7 @@ export default function Textbox(props) {
         settext(newtext);
     }
 
-    const Repeat = () => {
-        let newtext = text.repeat(3);
-        settext(newtext);
-    }
+
 
     const handdle = (event) => {
         settext(event.target.value);
@@ -44,14 +45,11 @@ export default function Textbox(props) {
                 <div className="mb-3">
                     <label htmlFor="text" className="form-label">{props.heading}</label>
                     <textarea className="form-control my-4" id="text" value={text} onChange={handdle} rows="9"></textarea>
-
-
                     <button className="btn btn-primary  my-4 mx-3" onClick={handupcase}>Upper Case</button>
                     <button className="btn btn-primary  my-4 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
-
-                    <button className="btn btn-primary  my-4 mx-3" onClick={Repeat}>Repeat text</button>
                     <button className="btn btn-primary my-4 mx-3" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
                     <button className="btn btn-primary my-4 mx-3" onClick={handleEmailExtractClick} > Extract Emails</button>
+                    <button className="btn btn-primary  my-4 mx-3" onClick={Cleartext}>Clear Text</button>
 
                 </div>
 
