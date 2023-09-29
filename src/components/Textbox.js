@@ -27,10 +27,7 @@ export default function Textbox(props) {
         let newtext = text.toLowerCase();
         settext(newtext);
     }
-    const Cleartext = () => {
-        let newtext = "";
-        settext(newtext);
-    }
+
     const Repeat = () => {
         let newtext = text.repeat(3);
         settext(newtext);
@@ -51,7 +48,7 @@ export default function Textbox(props) {
 
                     <button className="btn btn-primary  my-4 mx-3" onClick={handupcase}>Upper Case</button>
                     <button className="btn btn-primary  my-4 mx-3" onClick={ConvertintoLowerCase}>Lower Case</button>
-                    <button className="btn btn-primary  my-4 mx-3" onClick={Cleartext}>Clear Text</button>
+
                     <button className="btn btn-primary  my-4 mx-3" onClick={Repeat}>Repeat text</button>
                     <button className="btn btn-primary my-4 mx-3" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
                     <button className="btn btn-primary my-4 mx-3" onClick={handleEmailExtractClick} > Extract Emails</button>
